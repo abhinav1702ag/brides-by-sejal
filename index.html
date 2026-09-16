@@ -47,9 +47,55 @@ a:hover{color:#f2e9dc}
   [data-m="booking-grid"]{grid-template-columns:1fr!important}
   blockquote{padding:0 20px!important}
 }
-@media (max-width:900px) and (orientation:portrait){
-  #rotateGate{display:flex!important}
-  body{overflow:hidden}
+@media (max-width:760px){
+  /* ---- Portrait / phone layer ---- */
+  nav > a:first-child{font-size:17px!important;letter-spacing:.18em!important}
+  nav > div > a:last-child{padding:9px 16px!important;font-size:10px!important}
+  header#top > div:nth-child(2){background:linear-gradient(180deg,rgba(20,16,13,.55) 0%,rgba(20,16,13,.1) 32%,rgba(20,16,13,.55) 58%,rgba(20,16,13,.97) 100%)!important}
+  header#top img{object-position:50% 38%!important}
+  #heroTitle{font-size:clamp(46px,15vw,66px)!important;line-height:.95!important}
+  [data-m="hero-copy"]{padding:0 20px 36px!important;gap:16px!important}
+  [data-m="hero-copy"] > div:last-child{flex-direction:column!important;align-items:stretch!important;gap:18px!important}
+  [data-m="hero-copy"] > div:last-child > div{flex-direction:column!important;gap:4px!important}
+  [data-m="hero-copy"] > div:last-child > div a{text-align:center;padding:15px 18px!important;font-size:11px!important}
+  section[aria-label="Brands"]{padding:18px 0!important}
+  section[aria-label="Brands"] > div > div{font-size:15px!important;gap:32px!important;padding-right:32px!important}
+  section[data-screen-label="Intro collage"]{padding-top:64px!important;padding-bottom:64px!important}
+  section[data-screen-label="Intro collage"] h2{font-size:clamp(32px,9.5vw,40px)!important}
+  section[data-screen-label="Intro collage"] [data-delay="300"]{gap:8px!important;margin-bottom:36px!important}
+  section[data-screen-label="Intro collage"] [data-delay="300"] > span{padding:7px 13px!important;font-size:10px!important;letter-spacing:.18em!important}
+  [data-m="collage"]{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  [data-m="collage"]::-webkit-scrollbar{display:none}
+  [data-m="collage"] figure{flex:0 0 74vw;scroll-snap-align:center;margin-top:0!important}
+  [data-m="collage"] img{height:100vw!important}
+  [data-m~="about"]{grid-template-columns:1fr!important;padding-top:20px!important}
+  [data-m~="about"] img{height:auto!important;aspect-ratio:4/5}
+  [data-m~="about"] h2{font-size:32px!important}
+  #work h2{font-size:34px!important}
+  #work > div:first-child{margin-bottom:28px!important}
+  #gallery{grid-template-columns:repeat(2,1fr)!important;gap:8px!important}
+  #gallery figure{grid-column:span 1!important;height:auto!important;aspect-ratio:3/4}
+  #gallery figure:nth-child(5n+1){grid-column:span 2!important;aspect-ratio:4/5}
+  section[data-screen-label="Quote"]{height:auto!important;min-height:0!important;padding:96px 0}
+  section[data-screen-label="Quote"] p{font-size:23px!important}
+  section[data-screen-label="Quote"] p span{display:inline!important}
+  #experiences{padding-top:64px!important;padding-bottom:64px!important}
+  #experiences h2{font-size:34px!important}
+  #experiences > div:nth-child(2) > div{padding:30px 22px!important}
+  #experiences h3{font-size:26px!important}
+  #experiences > div:last-child{padding:24px 16px!important;margin-top:44px!important}
+  #experiences > div:last-child h3{font-size:24px!important}
+  [data-m="companion"]{grid-template-columns:1.15fr 1fr 1fr 1fr!important}
+  [data-m="companion"] > div{padding:12px 6px!important;font-size:12px!important;letter-spacing:.04em!important}
+  [data-m="companion"] > div:nth-child(-n+4){font-size:9px!important;letter-spacing:.14em!important}
+  #booking{padding:64px 20px!important}
+  #booking h2{font-size:32px!important}
+  #booking a{padding:15px 18px!important;font-size:11px!important;letter-spacing:.2em!important}
+  footer{padding-top:72px!important}
+  footer h2{font-size:clamp(40px,13vw,56px)!important}
+  footer > div:last-child > div:nth-child(3){flex-direction:column;align-items:stretch;margin-bottom:48px!important}
+  footer > div:last-child > div:nth-child(3) a{text-align:center;padding:15px 20px!important}
+  footer > div:last-child > div:last-child{flex-direction:column;align-items:center;text-align:center;gap:10px!important;font-size:10px!important}
 }
 </style>
 </helmet>
@@ -69,12 +115,6 @@ a:hover{color:#f2e9dc}
     <div style="font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:rgba(216,185,138,.7)">Luxury bridal artistry</div>
   </div>
 </sc-if>
-
-<div id="rotateGate" style="display:none;position:fixed;inset:0;z-index:300;background:#0e0a08;flex-direction:column;align-items:center;justify-content:center;gap:22px;text-align:center;padding:40px">
-  <svg viewBox="0 0 60 100" style="width:44px;height:74px;animation:rotateHint 2.4s ease-in-out infinite alternate"><rect x="3" y="3" width="54" height="94" rx="9" fill="none" stroke="#d8b98a" stroke-width="2"></rect><circle cx="30" cy="86" r="3" fill="#d8b98a"></circle></svg>
-  <div style="font-family:'Italiana',serif;font-size:28px;letter-spacing:.2em;color:#f6efe4">ROTATE YOUR PHONE</div>
-  <div style="font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:rgba(216,185,138,.75);line-height:1.8">Brides by Sejal is designed<br>for landscape viewing</div>
-</div>
 
 <div id="cursorDot" style="position:fixed;z-index:150;left:0;top:0;width:8px;height:8px;border-radius:50%;background:#d8b98a;pointer-events:none;transform:translate(-100px,-100px);mix-blend-mode:difference"></div>
 <div id="cursorRing" style="position:fixed;z-index:150;left:0;top:0;width:38px;height:38px;border-radius:50%;border:1px solid rgba(216,185,138,.7);pointer-events:none;transform:translate(-100px,-100px);transition:width .25s,height .25s,border-color .25s;display:flex;align-items:center;justify-content:center;font-size:8px;letter-spacing:.2em;color:#d8b98a"></div>
@@ -549,8 +589,8 @@ class Component extends DCLogic {
       document.querySelectorAll('[data-count]').forEach(el => this._ioC.observe(el));
     }
 
-    // Parallax loop
-    if (!reduce) {
+    // Parallax loop (skipped on phones: costs frames, and the collage scrolls sideways there)
+    if (!reduce && !matchMedia('(max-width:760px)').matches) {
       const plxEls = Array.from(document.querySelectorAll('[data-plx]'));
       const loop = () => {
         const vh = window.innerHeight;
