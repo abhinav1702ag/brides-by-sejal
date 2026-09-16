@@ -24,6 +24,11 @@ a:hover{color:#f2e9dc}
 @keyframes loaderLine{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
 @keyframes spinSlow{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
 @keyframes rotateHint{0%,20%{transform:rotate(0)}60%,100%{transform:rotate(90deg)}}
+#bookForm label{display:block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(216,185,138,.8);margin-bottom:8px}
+#bookForm input{width:100%;box-sizing:border-box;background:transparent;border:0;border-bottom:1px solid rgba(216,185,138,.35);padding:10px 0 12px;font-family:'Jost',sans-serif;font-weight:300;font-size:15px;color:#f6efe4;outline:0;transition:border-color .3s;border-radius:0;color-scheme:dark}
+#bookForm input::placeholder{color:rgba(242,233,220,.3)}
+#bookForm input:focus{border-bottom-color:#d8b98a}
+#bookForm .row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 @media (max-width:1000px){
   nav{padding:12px 20px!important}
   nav > div{gap:16px!important}
@@ -126,7 +131,7 @@ a:hover{color:#f2e9dc}
     <a href="#work" style="color:#cbb391">Portfolio</a>
     <a href="#experiences" style="color:#cbb391">Experiences</a>
     <a href="#booking" style="color:#cbb391">Booking</a>
-    <a href="https://wa.me/918239932349" target="_blank" style="color:#14100d;background:#d8b98a;padding:10px 22px;border-radius:2px;letter-spacing:.2em" style-hover="background:#f2e9dc;color:#14100d">Book a date</a>
+    <a href="#booking" style="color:#14100d;background:#d8b98a;padding:10px 22px;border-radius:2px;letter-spacing:.2em" style-hover="background:#f2e9dc;color:#14100d">Book a date</a>
   </div>
 </nav>
 
@@ -428,10 +433,20 @@ a:hover{color:#f2e9dc}
         <span style="display:block">in bridal season.</span>
       </h2>
       <p data-anim="fade" style="margin:0 0 30px;font-weight:300;font-size:15px;line-height:1.85;color:rgba(242,233,220,.75)">A non-refundable retainer of ₹50,000 secures your wedding date and begins the personalised planning process. All bookings are subject to availability — early enquiries are strongly encouraged.</p>
-      <div data-anim="fade" style="display:flex;flex-direction:column;gap:12px">
-        <a href="https://wa.me/918239932349" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;background:#d8b98a;color:#14100d;padding:16px 30px;font-size:12px;letter-spacing:.28em;text-transform:uppercase" style-hover="background:#f2e9dc">WhatsApp +91 82399 32349</a>
-        <a href="mailto:sejalgandhi00@gmail.com" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(216,185,138,.5);color:#f2e9dc;padding:16px 30px;font-size:12px;letter-spacing:.28em;text-transform:uppercase" style-hover="background:rgba(216,185,138,.12)">sejalgandhi00@gmail.com</a>
-      </div>
+      <form id="bookForm" data-anim="fade" style="display:flex;flex-direction:column;gap:24px;border:1px solid rgba(216,185,138,.25);background:#14100d;padding:28px 26px">
+        <div style="font-family:'Italiana',serif;font-size:24px;color:#f6efe4">Book a consultation</div>
+        <div class="row">
+          <div><label for="bfName">Your name</label><input id="bfName" name="name" type="text" required autocomplete="name" placeholder="Bride's name"></div>
+          <div><label for="bfPhone">Mobile (WhatsApp)</label><input id="bfPhone" name="phone" type="tel" required autocomplete="tel" placeholder="+91 98765 43210"></div>
+        </div>
+        <div><label for="bfEmail">Email</label><input id="bfEmail" name="email" type="email" required autocomplete="email" placeholder="you@example.com"></div>
+        <div class="row">
+          <div><label for="bfDate">Wedding date</label><input id="bfDate" name="wedding-date" type="date"></div>
+          <div><label for="bfCity">City / venue</label><input id="bfCity" name="city" type="text" placeholder="Jaipur, Mumbai, destination…"></div>
+        </div>
+        <button type="button" onClick="{{ bookSubmit }}" style="cursor:pointer;border:0;background:#d8b98a;color:#14100d;padding:17px 30px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;transition:background .3s" style-hover="background:#f2e9dc">Choose a consultation slot →</button>
+        <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,233,220,.45);line-height:1.9">Prefer to chat? <a href="https://wa.me/918239932349" target="_blank">WhatsApp</a> · <a href="mailto:sejalgandhi00@gmail.com">Email</a></div>
+      </form>
     </div>
     <div style="display:flex;flex-direction:column">
       <div data-anim="fade" style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid rgba(216,185,138,.18)">
@@ -682,7 +697,18 @@ class Component extends DCLogic {
       cLux0: p('₹2,09,000'), cLux1: p('₹2,97,000'), cLux2: p('₹3,29,000'),
       cCou0: p('₹2,99,000'), cCou1: p('₹3,79,000'), cCou2: p('₹4,20,000'),
       lightboxSrc: this.state.lightbox,
-      closeLightbox: () => this.setState({ lightbox: null })
+      closeLightbox: () => this.setState({ lightbox: null }),
+      bookSubmit: () => {
+        const f = document.getElementById('bookForm');
+        if (!f || !f.reportValidity()) return;
+        const v = (n) => (f.elements[n].value || '').trim();
+        let phone = v('phone').replace(/[^\d+]/g, '');
+        if (/^\d{10}$/.test(phone)) phone = '+91' + phone;
+        let date = v('wedding-date');
+        if (date) date = new Date(date + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+        const q = new URLSearchParams({ name: v('name'), email: v('email'), phone, 'wedding-date': date, city: v('city') });
+        window.open('https://cal.com/sejal-gandhi-nuoa0n/bridal-consultation?' + q.toString(), '_blank', 'noopener');
+      }
     };
   }
 }
