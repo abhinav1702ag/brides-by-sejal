@@ -24,6 +24,9 @@ a:hover{color:#f2e9dc}
 @keyframes loaderLine{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
 @keyframes spinSlow{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
 @keyframes rotateHint{0%,20%{transform:rotate(0)}60%,100%{transform:rotate(90deg)}}
+.brand{font-family:'Cormorant Garamond',serif;font-style:normal;font-weight:600;font-size:1.15em;color:#d8b98a;white-space:nowrap}
+section[aria-label="Brands"] span:nth-child(odd){color:#f0d9a8;text-shadow:0 0 24px rgba(216,185,138,.4)}
+section[aria-label="Brands"] span:nth-child(even){color:rgba(216,185,138,.5);font-size:16px}
 #bookForm label{display:block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(216,185,138,.8);margin-bottom:8px}
 #bookForm input{width:100%;box-sizing:border-box;background:transparent;border:0;border-bottom:1px solid rgba(216,185,138,.35);padding:10px 0 12px;font-family:'Jost',sans-serif;font-weight:300;font-size:15px;color:#f6efe4;outline:0;transition:border-color .3s;border-radius:0;color-scheme:dark}
 #bookForm input::placeholder{color:rgba(242,233,220,.3)}
@@ -47,8 +50,6 @@ a:hover{color:#f2e9dc}
   [data-m~="stats"]{grid-template-columns:1fr!important}
   #gallery{gap:8px!important}
   #gallery figure{height:34vw!important}
-  [data-m="companion"]{font-size:12px!important}
-  [data-m="companion"] > div{padding:10px 8px!important;font-size:12px!important;letter-spacing:.12em!important}
   [data-m="booking-grid"]{grid-template-columns:1fr!important}
   blockquote{padding:0 20px!important}
 }
@@ -90,9 +91,6 @@ a:hover{color:#f2e9dc}
   #experiences h3{font-size:26px!important}
   #experiences > div:last-child{padding:24px 16px!important;margin-top:44px!important}
   #experiences > div:last-child h3{font-size:24px!important}
-  [data-m="companion"]{grid-template-columns:1.15fr 1fr 1fr 1fr!important}
-  [data-m="companion"] > div{padding:12px 6px!important;font-size:12px!important;letter-spacing:.04em!important}
-  [data-m="companion"] > div:nth-child(-n+4){font-size:9px!important;letter-spacing:.14em!important}
   #booking{padding:64px 20px!important}
   #booking h2{font-size:32px!important}
   #booking a{padding:15px 18px!important;font-size:11px!important;letter-spacing:.2em!important}
@@ -163,12 +161,13 @@ a:hover{color:#f2e9dc}
   <div data-m="scroll" style="position:absolute;top:50%;right:40px;transform:translateY(-50%);writing-mode:vertical-rl;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:rgba(242,233,220,.5);animation:floaty 4s ease-in-out infinite">Scroll</div>
 </header>
 
-<section aria-label="Brands" style="border-top:1px solid rgba(216,185,138,.18);border-bottom:1px solid rgba(216,185,138,.18);background:#181310;overflow:hidden;padding:26px 0">
+<section aria-label="Brands" style="border-top:1px solid rgba(216,185,138,.18);border-bottom:1px solid rgba(216,185,138,.18);background:#181310;overflow:hidden;padding:24px 0 28px">
+  <div style="text-align:center;font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:rgba(242,233,220,.5);margin-bottom:16px">Worked alongside India's most celebrated houses</div>
   <div style="display:flex;width:max-content;animation:marquee 30s linear infinite">
-    <div style="display:flex;gap:64px;padding-right:64px;font-family:'Italiana',serif;font-size:22px;letter-spacing:.28em;color:#cbb391;white-space:nowrap">
+    <div style="display:flex;gap:64px;padding-right:64px;font-family:'Italiana',serif;font-size:25px;letter-spacing:.3em;white-space:nowrap">
       <span>SABYASACHI</span><span>✦</span><span>MANISH MALHOTRA</span><span>✦</span><span>ABU JANI SANDEEP KHOSLA</span><span>✦</span><span>RAHUL MISHRA</span><span>✦</span><span>AMRAPALI JEWELS</span><span>✦</span><span>LAKMÉ FASHION WEEK</span><span>✦</span>
     </div>
-    <div aria-hidden="true" style="display:flex;gap:64px;padding-right:64px;font-family:'Italiana',serif;font-size:22px;letter-spacing:.28em;color:#cbb391;white-space:nowrap">
+    <div aria-hidden="true" style="display:flex;gap:64px;padding-right:64px;font-family:'Italiana',serif;font-size:25px;letter-spacing:.3em;white-space:nowrap">
       <span>SABYASACHI</span><span>✦</span><span>MANISH MALHOTRA</span><span>✦</span><span>ABU JANI SANDEEP KHOSLA</span><span>✦</span><span>RAHUL MISHRA</span><span>✦</span><span>AMRAPALI JEWELS</span><span>✦</span><span>LAKMÉ FASHION WEEK</span><span>✦</span>
     </div>
   </div>
@@ -240,7 +239,7 @@ a:hover{color:#f2e9dc}
       <span style="display:block">The artistry of couture,</span>
       <span style="display:block">dedicated to <em style="font-family:'Cormorant Garamond',serif;color:#d8b98a">your</em> wedding.</span>
     </h2>
-    <p data-anim="fade" style="margin:0 0 18px;font-size:16px;line-height:1.85;font-weight:300;color:rgba(242,233,220,.82);max-width:56ch">With years in India's beauty and fashion industry, Sejal Gandhi has worked alongside the country's most celebrated designers and luxury brands — Sabyasachi, Manish Malhotra, Abu Jani Sandeep Khosla, Rahul Mishra, Amrapali Jewels and Lakmé Fashion Week — on celebrity, campaign and editorial productions.</p>
+    <p data-anim="fade" style="margin:0 0 18px;font-size:16px;line-height:1.85;font-weight:300;color:rgba(242,233,220,.82);max-width:56ch">With years in India's beauty and fashion industry, Sejal Gandhi has worked alongside the country's most celebrated designers and luxury brands — <em class="brand">Sabyasachi</em>, <em class="brand">Manish Malhotra</em>, <em class="brand">Abu Jani Sandeep Khosla</em>, <em class="brand">Rahul Mishra</em>, <em class="brand">Amrapali Jewels</em> and <em class="brand">Lakmé Fashion Week</em> — on celebrity, campaign and editorial productions.</p>
     <p data-anim="fade" style="margin:0 0 36px;font-size:16px;line-height:1.85;font-weight:300;color:rgba(242,233,220,.82);max-width:56ch">Today, that experience is devoted to one bride at a time: refined, personalised bridal experiences with the same artistry, professionalism and obsessive attention to detail.</p>
     <div data-anim="fade" data-m="stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(216,185,138,.25);border:1px solid rgba(216,185,138,.25)">
       <div style="background:#14100d;padding:26px 24px">
@@ -358,7 +357,7 @@ a:hover{color:#f2e9dc}
     <div data-anim="fade" style="border:1px solid rgba(216,185,138,.25);background:#181310;padding:38px 32px;display:flex;flex-direction:column;transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .5s" style-hover="transform:translateY(-8px);border-color:rgba(216,185,138,.6)">
       <div style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,233,220,.55)">01</div>
       <h3 style="margin:14px 0 6px;font-family:'Italiana',serif;font-weight:400;font-size:30px;color:#f6efe4">The Signature</h3>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#d8b98a;margin-bottom:22px">{{ priceSignature }}</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#d8b98a;margin-bottom:22px">Pricing shared on consultation</div>
       <div style="display:flex;flex-direction:column;gap:11px;font-weight:300;font-size:14px;line-height:1.55;color:rgba(242,233,220,.8)">
         <div>✦ Bridal makeup for 4 functions</div>
         <div>✦ Hairstyling for all functions</div>
@@ -374,7 +373,7 @@ a:hover{color:#f2e9dc}
     <div data-anim="fade" data-delay="150" style="border:1px solid rgba(216,185,138,.25);background:#181310;padding:38px 32px;display:flex;flex-direction:column;transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .5s" style-hover="transform:translateY(-8px);border-color:rgba(216,185,138,.6)">
       <div style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,233,220,.55)">02</div>
       <h3 style="margin:14px 0 6px;font-family:'Italiana',serif;font-weight:400;font-size:30px;color:#f6efe4">The Luxury</h3>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#d8b98a;margin-bottom:22px">{{ priceLuxury }}</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#d8b98a;margin-bottom:22px">Pricing shared on consultation</div>
       <div style="display:flex;flex-direction:column;gap:11px;font-weight:300;font-size:14px;line-height:1.55;color:rgba(242,233,220,.8)">
         <div style="color:rgba(242,233,220,.55)">Everything in Signature, plus —</div>
         <div>✦ Two bridal planning consultations</div>
@@ -389,7 +388,7 @@ a:hover{color:#f2e9dc}
       <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#d8b98a;color:#14100d;font-size:10px;letter-spacing:.3em;text-transform:uppercase;padding:6px 16px;white-space:nowrap">Most indulgent</div>
       <div style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,233,220,.55)">03</div>
       <h3 style="margin:14px 0 6px;font-family:'Italiana',serif;font-weight:400;font-size:30px;color:#f6efe4">The Couture</h3>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#d8b98a;margin-bottom:22px">{{ priceCouture }}</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#d8b98a;margin-bottom:22px">Pricing shared on consultation</div>
       <div style="display:flex;flex-direction:column;gap:11px;font-weight:300;font-size:14px;line-height:1.55;color:rgba(242,233,220,.85)">
         <div style="color:rgba(242,233,220,.55)">Everything in Luxury, plus —</div>
         <div>✦ Up to 5–6 luxury bridal concierge consultations</div>
@@ -407,25 +406,7 @@ a:hover{color:#f2e9dc}
       <h3 style="margin:0;font-family:'Italiana',serif;font-weight:400;font-size:30px;color:#f6efe4">Companion experiences</h3>
       <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:rgba(242,233,220,.7)">Share your bridal journey with the ones who matter most.</p>
     </div>
-    <div data-m="companion" style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:1px;background:rgba(216,185,138,.22);font-size:14px">
-      <div style="background:#14100d;padding:14px 18px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(242,233,220,.55)">Experience</div>
-      <div style="background:#14100d;padding:14px 18px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(242,233,220,.55)">Bride</div>
-      <div style="background:#14100d;padding:14px 18px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(242,233,220,.55)">Bride + One</div>
-      <div style="background:#14100d;padding:14px 18px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(242,233,220,.55)">Bride + Two</div>
-      <div style="background:#181310;padding:16px 18px;color:#f2e9dc">Signature</div>
-      <div style="background:#181310;padding:16px 18px;font-family:'Cormorant Garamond',serif;font-size:18px;color:#d8b98a">{{ cSig0 }}</div>
-      <div style="background:#181310;padding:16px 18px;font-family:'Cormorant Garamond',serif;font-size:18px;color:#d8b98a">{{ cSig1 }}</div>
-      <div style="background:#181310;padding:16px 18px;font-family:'Cormorant Garamond',serif;font-size:18px;color:#d8b98a">{{ cSig2 }}</div>
-      <div style="background:#181310;padding:16px 18px;color:#f2e9dc">Luxury</div>
-      <div style="background:#181310;padding:16px 18px;font-family:'Cormorant Garamond',serif;font-size:18px;color:#d8b98a">{{ cLux0 }}</div>
-      <div style="background:#181310;padding:16px 18px;font-family:'Cormorant Garamond',serif;font-size:18px;color:#d8b98a">{{ cLux1 }}</div>
-      <div style="background:#181310;padding:16px 18px;font-family:'Cormorant Garamond',serif;font-size:18px;color:#d8b98a">{{ cLux2 }}</div>
-      <div style="background:#181310;padding:16px 18px;color:#f2e9dc">Couture</div>
-      <div style="background:#181310;padding:16px 18px;font-family:'Cormorant Garamond',serif;font-size:18px;color:#d8b98a">{{ cCou0 }}</div>
-      <div style="background:#181310;padding:16px 18px;font-family:'Cormorant Garamond',serif;font-size:18px;color:#d8b98a">{{ cCou1 }}</div>
-      <div style="background:#181310;padding:16px 18px;font-family:'Cormorant Garamond',serif;font-size:18px;color:#d8b98a">{{ cCou2 }}</div>
-    </div>
-    <p style="margin:22px 0 0;font-size:12.5px;line-height:1.75;color:rgba(242,233,220,.55);max-width:80ch">Companions receive professional makeup, hairstyling, draping and ornament setting across all four functions, with looks coordinated to the bride's aesthetic — by the same team appointed for the bride. Planning consultations, concierge services and the Bridal Style Guide remain exclusively dedicated to the bride.</p>
+    <p style="margin:0;font-size:14px;line-height:1.8;color:rgba(242,233,220,.7);max-width:80ch">Available as Bride + One or Bride + Two across all three experiences. Companions receive professional makeup, hairstyling, draping and ornament setting across all four functions, with looks coordinated to the bride's aesthetic — by the same team appointed for the bride. Planning consultations, concierge services and the Bridal Style Guide remain exclusively dedicated to the bride.</p>
   </div>
 </section>
 
@@ -437,7 +418,7 @@ a:hover{color:#f2e9dc}
         <span style="display:block">Dates fill quickly</span>
         <span style="display:block">in bridal season.</span>
       </h2>
-      <p data-anim="fade" style="margin:0 0 30px;font-weight:300;font-size:15px;line-height:1.85;color:rgba(242,233,220,.75)">A non-refundable retainer of ₹50,000 secures your wedding date and begins the personalised planning process. All bookings are subject to availability — early enquiries are strongly encouraged.</p>
+      <p data-anim="fade" style="margin:0 0 30px;font-weight:300;font-size:15px;line-height:1.85;color:rgba(242,233,220,.75)">A non-refundable retainer of 20% of your chosen experience secures your wedding date and begins the personalised planning process. All bookings are subject to availability — early enquiries are strongly encouraged.</p>
       <form id="bookForm" data-anim="fade" style="display:flex;flex-direction:column;gap:24px;border:1px solid rgba(216,185,138,.25);background:#14100d;padding:28px 26px">
         <div style="font-family:'Italiana',serif;font-size:24px;color:#f6efe4">Book a consultation</div>
         <div class="row">
@@ -457,8 +438,8 @@ a:hover{color:#f2e9dc}
       <div data-anim="fade" style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid rgba(216,185,138,.18)">
         <div style="font-family:'Italiana',serif;font-size:30px;color:#d8b98a">01</div>
         <div>
-          <div style="font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#f2e9dc;margin-bottom:8px">Retainer — ₹50,000</div>
-          <div style="font-weight:300;font-size:14px;line-height:1.7;color:rgba(242,233,220,.65)">Non-refundable; confirms your booking and initiates planning. Payments via bank transfer or UPI.</div>
+          <div style="font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#f2e9dc;margin-bottom:8px">Retainer — 20% of your experience</div>
+          <div style="font-weight:300;font-size:14px;line-height:1.7;color:rgba(242,233,220,.65)">Non-refundable; 20% of the experience you choose confirms your booking and initiates planning. Payments via bank transfer or UPI.</div>
         </div>
       </div>
       <div data-anim="fade" data-delay="120" style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid rgba(216,185,138,.18)">
@@ -523,7 +504,7 @@ a:hover{color:#f2e9dc}
   </div>
 </sc-if>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;reduceMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;reduceMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
 class Component extends DCLogic {
   state = { lightbox: null, loading: true, loaderOpacity: 1 };
   componentDidMount() {
@@ -690,17 +671,9 @@ class Component extends DCLogic {
     if (this._galClick) document.body.removeEventListener('click', this._galClick);
   }
   renderVals() {
-    const show = this.props.showPrices ?? true;
-    const p = (v) => show ? v : 'On enquiry';
     return {
       loading: this.state.loading,
       loaderOpacity: this.state.loaderOpacity,
-      priceSignature: p('₹1,49,000'),
-      priceLuxury: p('₹2,09,000'),
-      priceCouture: p('₹2,99,000'),
-      cSig0: p('₹1,49,000'), cSig1: p('₹2,09,000'), cSig2: p('₹2,49,000'),
-      cLux0: p('₹2,09,000'), cLux1: p('₹2,97,000'), cLux2: p('₹3,29,000'),
-      cCou0: p('₹2,99,000'), cCou1: p('₹3,79,000'), cCou2: p('₹4,20,000'),
       lightboxSrc: this.state.lightbox,
       closeLightbox: () => this.setState({ lightbox: null }),
       bookSubmit: () => {
