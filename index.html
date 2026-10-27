@@ -32,6 +32,14 @@ section[aria-label="Brands"] span:nth-child(even){color:rgba(216,185,138,.5);fon
 #bookForm input::placeholder{color:rgba(242,233,220,.3)}
 #bookForm input:focus{border-bottom-color:#d8b98a}
 #bookForm .row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:1200px){
+  /* iPad: lift the stats row out of the text column so it spans under image + copy */
+  [data-m~="about"]{row-gap:0!important}
+  [data-m~="about"] > div:first-child{grid-row:1/span 4;grid-column:1;align-self:center}
+  [data-m~="about"] > div:last-child{display:contents}
+  [data-m~="about"] > div:last-child > *{grid-column:2}
+  [data-m~="about"] > div:last-child > [data-m~="stats"]{grid-column:1/-1;margin-top:40px}
+}
 @media (max-width:1000px){
   nav{padding:12px 20px!important}
   nav > div{gap:16px!important}
@@ -46,8 +54,11 @@ section[aria-label="Brands"] span:nth-child(even){color:rgba(216,185,138,.5);fon
   [data-m="collage"] figure{margin-top:0!important}
   /* IMG_1323 & IMG_1328 carry a brand badge bottom-left: keep ≥12% of the bottom cropped at every breakpoint */
   [data-m="collage"] img{height:32vw!important}
-  [data-m~="about"]{gap:24px!important}
-  [data-m~="stats"]{grid-template-columns:1fr!important}
+  [data-m~="about"]{grid-template-columns:1fr!important;column-gap:0!important}
+  [data-m~="about"] > div:first-child{grid-row:auto;grid-column:1;margin-bottom:36px}
+  [data-m~="about"] > div:last-child > *{grid-column:1}
+  [data-m~="about"] img{aspect-ratio:4/3!important}
+  [data-m~="stats"] > div > div:nth-child(2){font-size:22px!important}
   #gallery{gap:8px!important}
   #gallery figure{height:34vw!important}
   [data-m="companion"]{grid-template-columns:1fr!important}
@@ -76,6 +87,9 @@ section[aria-label="Brands"] span:nth-child(even){color:rgba(216,185,138,.5);fon
   [data-m="collage"] figure{flex:0 0 74vw;scroll-snap-align:center;margin-top:0!important}
   [data-m="collage"] img{height:78vw!important}
   [data-m~="about"]{grid-template-columns:1fr!important;padding-top:20px!important}
+  [data-m~="about"] img{aspect-ratio:1/1!important}
+  [data-m~="about"] > div:first-child{margin-bottom:28px}
+  [data-m~="stats"]{grid-template-columns:1fr!important}
   [data-m~="about"] h2{font-size:32px!important}
   #work h2{font-size:34px!important}
   #work > div:first-child{margin-bottom:28px!important}
